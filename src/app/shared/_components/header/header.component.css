@@ -1,0 +1,23 @@
+.background {
+    background-color: #DEDEDE;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 25px;
+    font-weight: bold;
+}
+.textoazul {
+    color: #004AAD;
+}
+.inline {
+    display: inline-block;
+}
+.lista li {
+    display: inline-block;
+}
+
+.lista {
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+}

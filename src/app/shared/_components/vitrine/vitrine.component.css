@@ -1,0 +1,16 @@
+.listaProdutos {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+}
+h4{
+    text-align: center;
+}
+.background {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+    padding-left: 15px;
+}

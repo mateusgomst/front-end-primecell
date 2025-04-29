@@ -1,0 +1,26 @@
+.background {
+    background-color: #EEEEEE;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.info  {
+    background-color: #B1CF5F;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
