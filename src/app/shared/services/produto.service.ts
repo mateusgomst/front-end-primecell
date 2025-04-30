@@ -13,5 +13,9 @@ export class ProdutoService {
     return this.http.get<Produto[]>("http://localhost:8080/products");
   }
 
+  postProduct(produto: Produto){
+    this.http.post<Produto>("http://localhost:8080/products", produto);
+  }
+
 }
 

@@ -1,4 +1,15 @@
-<form form>
-
-    <button type="submit">Submit</button>
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="email">
+        <label for="email">Email Address</label>
+        <div class="sec-2">
+            <input type="email" name="email" placeholder="Username@gmail.com" [(ngModel)]="user.email"/>
+        </div>
+    </div>
+    <div class="password">
+        <label for="password">Password</label>
+        <div class="sec-2">
+            <input class="pas" type="password" name="password" placeholder="············" [(ngModel)]="user.password" />
+        </div>
+    </div>
+    <button class="login" (click)="onSubmit()">Login</button>
 </form>
