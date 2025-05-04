@@ -1,8 +1,17 @@
 <div class="background">
     <h4>Produtos</h4>
+
+    <div class="filtro-tipos">
+        <label for="tipo">Filtrar por tipo:</label>
+        <select id="tipo" (change)="onTipoSelecionado($event)">
+            <option value="">Todos</option>
+            <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+        </select>
+    </div>
+
     <div class="listaProdutos">
-        @for (item of listaProdutos; track $index) {
-            <app-produto-vitrine [nomeProduto]="item.name" [description]="item.description" urlImagem="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2--0a9bBduAkVeStGL1EXvGC5qc29doEZovR3jTh5Kj3811e0Q9kw0SGhyoh53Z57QX0O5iFtQO3Ko57HKCWCi6GspRKXsKUzUiAgjtg"></app-produto-vitrine>
-        }
+        <app-produto-vitrine *ngFor="let item of listaProdutos" [nomeProduto]="item.name"
+            [description]="item.description" [urlImagem]="item.image">
+        </app-produto-vitrine>
     </div>
 </div>

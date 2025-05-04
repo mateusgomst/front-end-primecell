@@ -1,31 +1,58 @@
-import { Component } from '@angular/core';
-import { ProdutoVitrineComponent } from '../produto-vitrine/produto-vitrine.component';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ProdutoService } from '../../services/produto.service';
 import { Produto } from '../../interfaces/produto.interface';
-import { response } from 'express';
+import { ProdutoVitrineComponent } from '../produto-vitrine/produto-vitrine.component';
 
 @Component({
   selector: 'app-vitrine',
-  imports: [ProdutoVitrineComponent],
+  standalone: true,
+  imports: [
+    CommonModule, 
+    ProdutoVitrineComponent
+  ],
   templateUrl: './vitrine.component.html',
-  styleUrl: './vitrine.component.css',
-  providers: [
-    ProdutoService
-  ]
+  styleUrls: ['./vitrine.component.css'],
+  providers: [ProdutoService]
 })
-export class VitrineComponent {
-  listaProdutos: Produto[]= [];
+export class VitrineComponent implements OnInit {
+  listaProdutos: Produto[] = [];
+  tipos: string[] = ['ELETRONICOS', 'FONES', 'CARREGADORES', 'CASE', 'BATERIAS', 'ACESSORIOS', 'OUTROS'];
+  tipoSelecionado: string = '';
 
-  constructor(
-    private produtoService: ProdutoService
-  ){
-    produtoService.getAllProducts().subscribe(
-      response => {
-        this.listaProdutos = response;
-        console.log(this.listaProdutos);
+  constructor(private produtoService: ProdutoService) {}
+
+  ngOnInit(): void {
+    this.buscarTodosProdutos();
+  }
+
+  buscarTodosProdutos(): void {
+    this.produtoService.getAllProducts().subscribe(
+      (produtos) => {
+        this.listaProdutos = produtos;
+      },
+      (error) => {
+        console.error('Erro ao buscar todos os produtos:', error);
       }
     );
   }
-    
+
+  onTipoSelecionado(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    const tipoSelecionado = selectElement.value;
+    this.tipoSelecionado = tipoSelecionado;
+
+    if (tipoSelecionado) {
+      this.produtoService.getProductsByCategory(tipoSelecionado).subscribe(
+        (produtos) => {
+          this.listaProdutos = produtos;
+        },
+        (error) => {
+          console.error('Erro ao buscar produtos por tipo:', error);
+        }
+      );
+    } else {
+      this.buscarTodosProdutos();
+    }
+  }
 }

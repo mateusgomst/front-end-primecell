@@ -13,6 +13,7 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
 }
 
 /* Estilo do logo */
@@ -21,6 +22,7 @@
     font-weight: bold;
     color: #333;
     line-height: 1.2;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 
 .textoazul {
@@ -34,6 +36,7 @@
     padding: 0;
     display: flex;
     gap: 20px; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
 }
 
 /* Links de navegação */
@@ -51,12 +54,13 @@
 /* Responsividade */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Mantém os itens em linha horizontal */
+        justify-content: space-between;
+        align-items: center;
     }
 
     .lista {
-        flex-direction: column;
+        flex-direction: row; /* Mantém os links lado a lado */
         gap: 10px;
     }
 }
