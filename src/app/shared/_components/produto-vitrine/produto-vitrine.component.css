@@ -1,26 +1,67 @@
-.background {
-    background-color: #EEEEEE;
+/* Contêiner para alinhar os produtos em uma grade */
+.produto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-h5 {
-    text-align: center;
-}
-
-.info  {
-    background-color: #add8e6;
-    padding: 10px;
+/* Estilo geral do card do produto */
+.produto-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    font-weight: bold;
-    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
-img {
-    width: 200px;
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do produto */
+.produto-imagem img {
+    width: 100%;
     height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Informações do produto */
+.produto-info {
+    padding: 15px;
+}
+
+.produto-nome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.produto-descricao {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Botão de mais informações */
+.produto-botao {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.produto-botao:hover {
+    background-color: #218838;
 }

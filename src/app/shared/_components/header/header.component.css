@@ -1,23 +1,62 @@
+/* Estilo geral do header */
 .background {
-    background-color: #DEDEDE;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 25px;
-    font-weight: bold;
-}
-.textoazul {
-    color: #004AAD;
-}
-.inline {
-    display: inline-block;
-}
-.lista li {
-    display: inline-block;
+    background-color: #f8f9fa; /* Cor de fundo clara */
+    padding: 15px 20px;
+    border-bottom: 2px solid #ddd; /* Linha inferior para separação */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
-.lista {
-    width: 250px;
+/* Container do header */
+.header-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo do logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+}
+
+.textoazul {
+    color: #007bff; /* Azul padrão */
+}
+
+/* Lista de navegação */
+.lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Links de navegação */
+.nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Azul ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lista {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
