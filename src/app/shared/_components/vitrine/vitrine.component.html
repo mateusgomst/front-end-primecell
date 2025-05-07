@@ -1,5 +1,5 @@
 <div class="background">
-    <h4>Produtos</h4>
+    <h4 class="titulo">Produtos</h4>
 
     <div class="filtro-tipos">
         <label for="tipo">Filtrar por tipo:</label>
@@ -9,9 +9,9 @@
         </select>
     </div>
 
-    <div class="listaProdutos">
+    <div class="lista-produtos">
         <app-produto-vitrine *ngFor="let item of listaProdutos" [nomeProduto]="item.name"
-            [description]="item.description" [urlImagem]="item.image">
+            [description]="item.description" [image]="item.image">
         </app-produto-vitrine>
     </div>
 </div>

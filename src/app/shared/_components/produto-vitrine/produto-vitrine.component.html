@@ -1,12 +1,15 @@
 <div class="produto-container">
     <div class="produto-card">
         <div class="produto-imagem">
-            <img [src]="urlImagem" alt="Imagem do produto">
+            <img [src]="imagemUrl" [alt]="nomeProduto" (error)="handleImageError($event)" loading="lazy" />
         </div>
         <div class="produto-info">
-            <h5 class="produto-nome">{{ nomeProduto }}</h5>
+            <h2 class="produto-nome">{{ nomeProduto }}</h2>
             <p class="produto-descricao">{{ description }}</p>
-            <a [href]="urlWhatsapp" target="_blank" class="produto-botao">Mais informações</a>
+            <a [href]="urlWhatsapp" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Mais informações sobre ' + nomeProduto" class="produto-botao">
+
+                <span>💬</span> Mais informações
+            </a>
         </div>
     </div>
 </div>

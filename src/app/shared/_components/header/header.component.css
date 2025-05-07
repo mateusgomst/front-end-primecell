@@ -1,9 +1,9 @@
 /* Estilo geral do header */
 .background {
-    background-color: #f8f9fa; /* Cor de fundo clara */
-    padding: 15px 20px;
-    border-bottom: 2px solid #ddd; /* Linha inferior para separação */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background: linear-gradient(145deg, #1e2a38, #3e4a61); /* Gradiente suave para um fundo escuro e sofisticado */
+    padding: 20px 30px;
+    border-bottom: 2px solid #333; /* Linha inferior mais sutil */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
 }
 
 /* Container do header */
@@ -13,20 +13,20 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    flex-wrap: wrap; /* Permite o ajuste em telas menores */
 }
 
 /* Estilo do logo */
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff; /* Logo em branco */
     line-height: 1.2;
-    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    white-space: nowrap;
 }
 
 .textoazul {
-    color: #007bff; /* Azul padrão */
+    color: #00bcd4; /* Azul mais vibrante */
 }
 
 /* Lista de navegação */
@@ -35,32 +35,36 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px; /* Espaçamento entre os itens */
+    gap: 30px; /* Espaçamento entre os itens */
     flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    justify-content: center; /* Centraliza os links */
 }
 
 /* Links de navegação */
 .nav-link {
     text-decoration: none;
     font-size: 16px;
-    color: #333;
-    transition: color 0.3s ease;
+    color: #dcdfe6; /* Texto de navegação em cinza claro */
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #007bff; /* Azul ao passar o mouse */
+    color: #00bcd4; /* Azul ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de elevação no hover */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: row; /* Mantém os itens em linha horizontal */
-        justify-content: space-between;
+        flex-direction: row; /* Coloca o logo e a navegação na mesma linha */
+        justify-content: space-between; /* Garante o alinhamento adequado */
         align-items: center;
     }
 
     .lista {
-        flex-direction: row; /* Mantém os links lado a lado */
-        gap: 10px;
+        flex-direction: row; /* Mantém os links na horizontal no mobile */
+        gap: 15px;
+        margin-top: 0; /* Remove o espaço superior extra */
     }
 }

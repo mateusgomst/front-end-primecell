@@ -1,0 +1,22 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label for="name">Nome:</label>
+        <input id="name" type="text" formControlName="name" required>
+
+        <label for="description">Descrição:</label>
+        <input id="description" type="text" formControlName="description" required>
+
+        <label for="type">Tipo:</label>
+        <select id="type" formControlName="type" required>
+            <option value="" disabled selected>Selecione o tipo</option>
+            <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+        </select>
+
+        <label for="image">Imagem:</label>
+        <input id="image" type="file" (change)="onFileSelected($event)" accept="image/*" required>
+
+        <button type="submit" class="submit-button">Cadastrar Produto</button>
+
+        <a routerLink="/admin" class="back-link">Voltar</a>
+    </form>
+</div>

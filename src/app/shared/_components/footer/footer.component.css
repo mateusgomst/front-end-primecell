@@ -1,10 +1,43 @@
+/* Estilo geral do footer */
 .footer {
-    background-color: #f1f1f1;
+    background: linear-gradient(145deg, #1e2a38, #3e4a61); /* Gradiente suave, como o header */
+    color: #dcdfe6; /* Cor do texto clara para contraste */
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 30px; /* Espaçamento interno */
+    font-size: 14px; /* Fonte menor, mas legível */
+    border-top: 2px solid #333; /* Linha superior para separação */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave na parte superior */
     position: fixed;
     bottom: 0;
+    left: 0; /* Garantir que o footer ocupe toda a largura da tela */
     width: 100%;
-    font-size: 14px;
-    color: #333;
+    z-index: 10; /* Garante que o footer fique acima de outros conteúdos */
+}
+
+/* Estilo do texto no footer */
+.footer p {
+    margin: 0; /* Remove margens extras */
+    font-weight: 400; /* Peso normal para o texto */
+}
+
+/* Efeito de hover no footer */
+.footer p:hover {
+    color: #00bcd4; /* Azul ao passar o mouse */
+    transition: color 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 15px; /* Ajuste do padding em telas menores */
+    }
+
+    .footer p {
+        font-size: 12px; /* Diminui o tamanho da fonte em telas menores */
+    }
+}
+
+/* Estilo do conteúdo da página para garantir que o conteúdo não sobreponha o footer */
+body {
+    padding-bottom: 50px; /* Ajuste o valor conforme a altura do footer */
 }
